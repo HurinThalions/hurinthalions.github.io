@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SbS - Strartseite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+
+            font-family: 'Asap', sans-serif;
+            background-color: #EEF8FF;
+            margin: 0;
+        }
+
+        /*Oberste Leiste*/
+
+        .header {
+
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            height: 80px;
+
+            background-color: #4680A7;
+
+        }
+
+        .boxumProfil,
+        .boxumAErstellen {
+
+            /* Positionierung der Box */
+            position: relative;
+
+            /* Einbetten der Box in den Header */
+            height: inherit;
+            width: 80px;
+
+            /* Abstand zum rechten Webseitenrand */
+            margin-right: 1%;
+        }
+
+        .profil,
+        .aErstellen {
+
+            /* Positionierung der Buttons in der Mitte der Box 'boxumProfil' */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+            /* Groeße des Buttons */
+            height: 50%;
+            width: 50%;
+            max-height: 40px;
+            max-width: 40px;
+
+            /* Runder Button */
+            border-radius: 50%;
+        }
+
+
+        /* Orientierung und Position der Suchleiste*/
+
+        .suchleiste input[type=text] {
+
+            display: block;
+            margin: 0 auto;
+            margin-top: 5%;
+            width: 50%;
+            font-size: 24px;
+            border-color: black;
+
+        }
+
+        /*Zuletzte Angesehen Schrift und Anleitungen*/
+
+        /* Text: Zuletzt angesehen */
+        .text-zuletztangesehen {
+
+            text-align: left;
+            text-decoration: underline;
+            font-size: 20px;
+            margin-top: 5%;
+            margin-left: 13%;
+        }
+
+        /* Anleitungen zuletzt angesehen */
+
+        .anleitungen_zuletztangesehen {
+
+            display: flex;
+            justify-content: space-between;
+            margin-left: 13%;
+            margin-right: 5%;
+        }
+
+        /* Fillerbilder für Anleitungen die zuletzt angesehen wurden */
+
+        .fillerbild1,
+        .fillerbild2,
+        .fillerbild3,
+        .fillerbild4,
+        .fillerbild5 {
+
+            width: 50%;
+            height: 100%;
+        }
+
+        /* Bezeichnungen der darueber angezeigten Anleitungen */
+
+        #anleitungsbezeichnung1,
+        #anleitungsbezeichnung2,
+        #anleitungsbezeichnung3,
+        #anleitungsbezeichnung4,
+        #anleitungsbezeichnung5 {
+
+            position: absolute;
+            font-size: 16px;
+            color: black;
+        }
+
+        /* Katalog mit allen Anleitungen */
+
+        .katalog {
+
+            margin-top: 5%;
+            margin-left: 13%;
+        }
+
+        #katalog {
+
+            border-collapse: collapse;
+            width: 74%;
+            text-align: left;
+        }
+
+        #katalog td,
+        #katalog th {
+
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Oberste Leiste die auf (jeder) Seite zu sehen sein wird -->
+
+    <div class="header">
+
+        <!-- <img class="logo" src="SbS-Logo.jpg"> -->
+
+        <div class="boxumAErstellen">
+            <button class="aErstellen"
+                onclick="Anleitungenerstellen()">plusicon</button>
+        </div>
+
+        <div class="boxumProfil">
+            <button class="profil"
+                onclick="Profilbearbeiten()">profilicon</button>
+        </div>
+    </div>
+
+    <!-- Suchleiste -->
+
+    <div class="suchleiste">
+        <form action="#">
+            <input type="text" placeholder="Suche" name="Suche">
+        </form>
+    </div>
+
+    <!-- Zuletzt Angesehen Text -->
+
+    <h3 class="text-zuletztangesehen">
+        Zuletzt Angesehen:
+    </h3>
+
+    <!-- Zuletzt Angesehen Anleitung mit Beschriftung -->
+
+    <div class="anleitungen_zuletztangesehen">
+
+        <!-- Muss durch entsprechende Anleitung ersetzt werden -->
+
+        <a href="#"> <img class="fillerbild1" src="Fillerbild.png">
+            <p id="anleitungsbezeichnung1">Anleitung 1</p>
+        </a>
+
+        <a href="#"> <img class="fillerbild2" src="Fillerbild.png">
+            <p id="anleitungsbezeichnung2">Anleitung 2</p>
+        </a>
+
+        <a href="#"> <img class="fillerbild3" src="Fillerbild.png">
+            <p id="anleitungsbezeichnung3">Anleitung 3</p>
+        </a>
+
+        <a href="#"> <img class="fillerbild4" src="Fillerbild.png">
+            <p id="anleitungsbezeichnung4">Anleitung 4</p>
+        </a>
+
+        <a href="#"> <img class="fillerbild5" src="Fillerbild.png">
+            <p id="anleitungsbezeichnung5">Anleitung 5</p>
+        </a>
+    </div>
+
+    <!-- Katalog der schon bestehenden Anleitungen -->
+
+    <table id="katalog" class="katalog" width='100%'>
+        <col width='2%'>
+        <col width='30%'>
+        <col width='30%'>
+        <col width='30%'>
+        <col width='3%'>
+        <col width='2%'>
+        <col width='3%'>
+
+        <tr>
+            <th></th>
+            <th>Titel</th>
+            <th>Ersteller</th>
+            <th>Kategorie</th>
+            <th>Dauer[min]</th>
+            <th>Datum</th>
+            <th>M</th>
+        </tr>
+
+        <tr>
+            <td>3P</td>
+            <td>Titel1</td>
+            <td>Ersteller1</td>
+            <td>Kategorie1</td>
+            <td>10</td>
+            <td>12.11.22</td>
+            <td>m</td>
+        </tr>
+    </table>
+</body>
+
+</html>
